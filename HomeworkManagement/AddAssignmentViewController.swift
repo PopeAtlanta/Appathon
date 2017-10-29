@@ -9,6 +9,9 @@
 import UIKit
 
 class AddAssignmentViewController: UIViewController {
+    
+    
+    @IBOutlet weak var nameLabel: UITextField!
     @IBOutlet weak var dropDown1: UIDatePicker!
     @IBOutlet weak var dropDown2: UIDatePicker!
 
@@ -16,6 +19,14 @@ class AddAssignmentViewController: UIViewController {
         self.navigationController?.popViewController(animated: true)
     }
 
+    @IBAction func saveButton(_ sender: Any) {
+        let newAssignment = Assignment.init(name: nameLabel.text!, start: dropDown1.date, end: dropDown2.date)
+        let controllerStack = self.navigationController?.viewControllers
+        let parent = controllerStack![(controllerStack?.count)!-2] as! MainViewController
+        parent.addAssignment(newAssignment: newAssignment)
+        self.navigationController?.popViewController(animated: true)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

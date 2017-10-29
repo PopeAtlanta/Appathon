@@ -83,6 +83,11 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
         assignmentTable.reloadData()
     }
     
+    public func addAssignment(newAssignment: Assignment) {
+        assignments.append(newAssignment)
+        assignmentTable.reloadData()
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "editSegue" {
             let destination = segue.destination as! EditAssignmentViewController
