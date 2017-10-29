@@ -56,6 +56,8 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        
         // Do any additional setup after loading the view, typically from a nib.
         
         dateFormatter = DateFormatter()
@@ -98,9 +100,10 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         let totalTime = endUnix - startUnix
         let elapsedtime = nowUnix - startUnix
-        let progress = Float(elapsedtime) / Float(totalTime)
+        var progress = Float(elapsedtime) / Float(totalTime)
+        progress = max(min(1, progress), 0)
         
-        cell.progressBar.progress = max(min(1, progress), 0)
+        cell.progressBar.progress = progress
         cell.percentLabel.text = String.init(format: "%3.1f", progress * 100) + "%"
         
         /*print(startUnix)
