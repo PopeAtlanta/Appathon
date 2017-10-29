@@ -66,7 +66,7 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
         let elapsedtime = nowUnix - startUnix
         let progress = Float(elapsedtime) / Float(totalTime)
         
-        cell.progressBar.progress = progress
+        cell.progressBar.progress = max(min(1, progress), 0)
         cell.percentLabel.text = String.init(format: "%3.1f", progress * 100) + "%"
         
         /*print(startUnix)
@@ -76,6 +76,17 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         
         return cell
+    }
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "editSegue" {
+            let destination = segue.destination as! EditAssignmentViewController
+            let selectedCell = (sender as! UIButton).superview?.superview?.superview?.superview as! AssignmentCell
+            let index = assignmentTable.indexPath(for: selectedCell)!.row
+            destination.assignment = assignments[index]
+            destination.assignmentIndex = index
+        }
     }
 
 
