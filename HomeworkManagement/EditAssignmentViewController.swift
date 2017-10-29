@@ -38,6 +38,12 @@ class EditAssignmentViewController: UIViewController {
     
     
     @IBAction func savePressed(_ sender: Any) {
+        let newAssignment = Assignment.init(name: nameLabel.text!, start: startPicker.date, end: endPicker.date)
+        let controllerStack = self.navigationController?.viewControllers
+        let parent = controllerStack![(controllerStack?.count)!-2] as! MainViewController
+        parent.updateAssignment(index: assignmentIndex!, updatedAssignment: newAssignment)
+        self.navigationController?.popViewController(animated: true)
+        
     }
     
 

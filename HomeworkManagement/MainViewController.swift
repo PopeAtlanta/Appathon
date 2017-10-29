@@ -78,6 +78,10 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
         return cell
     }
     
+    public func updateAssignment(index: Int, updatedAssignment: Assignment) {
+        assignments[index] = updatedAssignment
+        assignmentTable.reloadData()
+    }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "editSegue" {
