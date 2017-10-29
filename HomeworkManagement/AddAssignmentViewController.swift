@@ -9,10 +9,12 @@
 import UIKit
 
 class AddAssignmentViewController: UIViewController {
-    @IBOutlet weak var textBox1: UITextField!
-    @IBOutlet weak var dropDown1: UIPickerView!
-    @IBOutlet weak var textBox2: UITextField!
-    @IBOutlet weak var dropDown2: UIPickerView!
+    @IBOutlet weak var dropDown1: UIDatePicker!
+    @IBOutlet weak var dropDown2: UIDatePicker!
+
+    @IBAction func cancelButton(_ sender: UIButton) {
+        self.navigationController?.popViewController(animated: true)
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
