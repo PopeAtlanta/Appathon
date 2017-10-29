@@ -13,6 +13,7 @@
 		46EECD911FA546F5002F0859 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 46EECD901FA546F5002F0859 /* Assets.xcassets */; };
 		46EECD941FA546F5002F0859 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 46EECD921FA546F5002F0859 /* LaunchScreen.storyboard */; };
 		46EECD9F1FA546F5002F0859 /* HomeworkManagementUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46EECD9E1FA546F5002F0859 /* HomeworkManagementUITests.swift */; };
+		46EECDAA1FA566F3002F0859 /* AddAssignmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46EECDA91FA566F3002F0859 /* AddAssignmentViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +37,7 @@
 		46EECD9A1FA546F5002F0859 /* HomeworkManagementUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HomeworkManagementUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		46EECD9E1FA546F5002F0859 /* HomeworkManagementUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeworkManagementUITests.swift; sourceTree = "<group>"; };
 		46EECDA01FA546F5002F0859 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		46EECDA91FA566F3002F0859 /* AddAssignmentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddAssignmentViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +80,7 @@
 			isa = PBXGroup;
 			children = (
 				46EECD891FA546F4002F0859 /* AppDelegate.swift */,
+				46EECDA91FA566F3002F0859 /* AddAssignmentViewController.swift */,
 				46EECD8B1FA546F4002F0859 /* MainViewController.swift */,
 				46EECD8D1FA546F5002F0859 /* Main.storyboard */,
 				46EECD901FA546F5002F0859 /* Assets.xcassets */,
@@ -200,6 +203,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				46EECD8C1FA546F4002F0859 /* MainViewController.swift in Sources */,
+				46EECDAA1FA566F3002F0859 /* AddAssignmentViewController.swift in Sources */,
 				46EECD8A1FA546F4002F0859 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
