@@ -8,10 +8,37 @@
 
 import UIKit
    
-struct Assignment {
-    var name: String
-    var start: Date
-    var end: Date
+class Assignment: NSObject, NSCoding {
+    
+    var name: String = ""
+    var start: Date = Date.init(timeIntervalSinceNow: 0)
+    var end: Date = Date.init(timeIntervalSinceNow: 0)
+    
+    func encode(with aCoder: NSCoder) {
+        aCoder.encode(name, forKey: "name")
+        aCoder.encode(start, forKey: "start")
+        aCoder.encode(end, forKey: "end")
+    }
+    
+    init(name: String, start: Date, end: Date) {
+        self.name = name
+        self.start = start
+        self.end = end
+        super.init()
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        if let nameObj = aDecoder.decodeObject(forKey: "name") as? String {
+            name = nameObj
+        }
+        if let startObj = aDecoder.decodeObject(forKey: "start") as? Date {
+            start = startObj
+        }
+        if let endObj = aDecoder.decodeObject(forKey: "end") as? Date {
+            end = endObj
+        }
+    }
+    
 }
 
 class MainViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
@@ -20,6 +47,12 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
     var dateFormatter: DateFormatter!
 
     @IBOutlet weak var assignmentTable: UITableView!
+    
+    var filePath: String {
+        let manager = FileManager.default
+        let url = manager.urls(for: .documentDirectory, in: .userDomainMask).first
+        return url!.appendingPathComponent("Data").path
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,12 +62,13 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
         assignments = []
         
         dateFormatter.dateFormat = "yyyy/MM/dd"
-        assignments.append(Assignment.init(name: "Assignment 1",
+        /*assignments.append(Assignment.init(name: "Assignment 1",
                                            start: dateFormatter.date(from: "2017/10/02")!,
                                            end: dateFormatter.date(from:"2017/12/31")!))
         assignments.append(Assignment.init(name: "Assignment 2",
                                            start: dateFormatter.date(from: "2017/09/02")!,
-                                           end: dateFormatter.date(from:"2017/12/01")!))
+                                           end: dateFormatter.date(from:"2017/12/01")!))*/
+        assignments = loadAssignments() ?? []
         
         assignmentTable.delegate = self
         assignmentTable.dataSource = self
@@ -78,19 +112,29 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
         return cell
     }
     
+    func saveAssignments() {
+        let _ = NSKeyedArchiver.archiveRootObject(assignments, toFile: filePath)
+        assignments = loadAssignments()
+        assignmentTable.reloadData()
+    }
+    
+    func loadAssignments() -> [Assignment]? {
+        return NSKeyedUnarchiver.unarchiveObject(withFile: filePath) as? [Assignment]
+    }
+    
     public func updateAssignment(index: Int, updatedAssignment: Assignment) {
         assignments[index] = updatedAssignment
-        assignmentTable.reloadData()
+        saveAssignments()
     }
     
     public func addAssignment(newAssignment: Assignment) {
         assignments.append(newAssignment)
-        assignmentTable.reloadData()
+        saveAssignments()
     }
     
     public func deleteAssignment(index: Int) {
         assignments.remove(at: index)
-        assignmentTable.reloadData()
+        saveAssignments()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
