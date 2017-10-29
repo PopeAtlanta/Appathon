@@ -20,11 +20,19 @@ class AddAssignmentViewController: UIViewController {
     }
 
     @IBAction func saveButton(_ sender: Any) {
-        let newAssignment = Assignment.init(name: nameLabel.text!, start: dropDown1.date, end: dropDown2.date)
-        let controllerStack = self.navigationController?.viewControllers
-        let parent = controllerStack![(controllerStack?.count)!-2] as! MainViewController
-        parent.addAssignment(newAssignment: newAssignment)
-        self.navigationController?.popViewController(animated: true)
+        if nameLabel.text == "" {
+            let alert = UIAlertController(title: "Error", message: "You must enter an Assignment Name" , preferredStyle: .alert)
+            let cancel = UIAlertAction(title: "Okay", style: .cancel, handler: nil)
+            alert.addAction(cancel)
+            self.present(alert, animated: true, completion: nil)
+        } else {
+            let newAssignment = Assignment.init(name: nameLabel.text!, start: dropDown1.date, end: dropDown2.date)
+            let controllerStack = self.navigationController?.viewControllers
+            let parent = controllerStack![(controllerStack?.count)!-2] as! MainViewController
+            parent.addAssignment(newAssignment: newAssignment)
+            self.navigationController?.popViewController(animated: true)
+        }
+        
     }
     
     override func viewDidLoad() {

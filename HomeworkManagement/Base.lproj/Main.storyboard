@@ -38,14 +38,17 @@
                                                         <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="dwO-Ur-KGJ">
                                                             <rect key="frame" x="0.0" y="0.0" width="375" height="29.5"/>
                                                             <subviews>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vmt-Pd-DnP">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="228.5" height="29.5"/>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="250" verticalCompressionResistancePriority="250" text="Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vmt-Pd-DnP">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="275" height="29.5"/>
                                                                     <fontDescription key="fontDescription" name=".SFNSDisplay" family=".SF NS Display" pointSize="24"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
-                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dxL-S7-hEy">
-                                                                    <rect key="frame" x="228.5" y="0.0" width="146.5" height="29.5"/>
+                                                                <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="250" verticalCompressionResistancePriority="250" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dxL-S7-hEy">
+                                                                    <rect key="frame" x="275" y="0.0" width="100" height="29.5"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="width" constant="100" id="c5Q-BG-3Cy"/>
+                                                                    </constraints>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                                                     <state key="normal" title="Edit">
                                                                         <color key="titleColor" red="0.50196081400000003" green="0.0" blue="0.25098040700000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -56,6 +59,10 @@
                                                                 </button>
                                                             </subviews>
                                                             <color key="tintColor" red="0.20000000300000001" green="0.20000000300000001" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <constraints>
+                                                                <constraint firstItem="vmt-Pd-DnP" firstAttribute="leading" secondItem="dwO-Ur-KGJ" secondAttribute="leading" id="d2S-FX-iYW"/>
+                                                                <constraint firstAttribute="trailing" secondItem="dxL-S7-hEy" secondAttribute="trailing" id="wdl-vy-oCj"/>
+                                                            </constraints>
                                                         </stackView>
                                                         <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="Pow-c0-jlV">
                                                             <rect key="frame" x="0.0" y="29.5" width="375" height="29.5"/>
