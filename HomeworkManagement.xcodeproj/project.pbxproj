@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1E809E271FA553B500F6A5AA /* AssignmentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E809E261FA553B500F6A5AA /* AssignmentCell.swift */; };
+		1E809E291FA573FD00F6A5AA /* EditAssignmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E809E281FA573FD00F6A5AA /* EditAssignmentViewController.swift */; };
 		46EECD8A1FA546F4002F0859 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46EECD891FA546F4002F0859 /* AppDelegate.swift */; };
 		46EECD8C1FA546F4002F0859 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46EECD8B1FA546F4002F0859 /* MainViewController.swift */; };
 		46EECD8F1FA546F5002F0859 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 46EECD8D1FA546F5002F0859 /* Main.storyboard */; };
@@ -29,6 +30,7 @@
 
 /* Begin PBXFileReference section */
 		1E809E261FA553B500F6A5AA /* AssignmentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssignmentCell.swift; sourceTree = "<group>"; };
+		1E809E281FA573FD00F6A5AA /* EditAssignmentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditAssignmentViewController.swift; sourceTree = "<group>"; };
 		46EECD861FA546F4002F0859 /* HomeworkManagement.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HomeworkManagement.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		46EECD891FA546F4002F0859 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		46EECD8B1FA546F4002F0859 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -85,6 +87,7 @@
 				46EECDA91FA566F3002F0859 /* AddAssignmentViewController.swift */,
 				46EECD8B1FA546F4002F0859 /* MainViewController.swift */,
 				1E809E261FA553B500F6A5AA /* AssignmentCell.swift */,
+				1E809E281FA573FD00F6A5AA /* EditAssignmentViewController.swift */,
 				46EECD8D1FA546F5002F0859 /* Main.storyboard */,
 				46EECD901FA546F5002F0859 /* Assets.xcassets */,
 				46EECD921FA546F5002F0859 /* LaunchScreen.storyboard */,
@@ -207,6 +210,7 @@
 			files = (
 				1E809E271FA553B500F6A5AA /* AssignmentCell.swift in Sources */,
 				46EECD8C1FA546F4002F0859 /* MainViewController.swift in Sources */,
+				1E809E291FA573FD00F6A5AA /* EditAssignmentViewController.swift in Sources */,
 				46EECDAA1FA566F3002F0859 /* AddAssignmentViewController.swift in Sources */,
 				46EECD8A1FA546F4002F0859 /* AppDelegate.swift in Sources */,
 			);
