@@ -46,6 +46,23 @@ class EditAssignmentViewController: UIViewController {
         
     }
     
+    @IBAction func deletePressed(_ sender: Any) {
+        let alert = UIAlertController(title: "Delete Assignment?", message: "This Action cannot be undone" , preferredStyle: .alert)
+        let delete = UIAlertAction(title: "Delete", style: .destructive, handler: {action in
+            let controllerStack = self.navigationController?.viewControllers
+            let parent = controllerStack![(controllerStack?.count)!-2] as! MainViewController
+            parent.deleteAssignment(index: self.assignmentIndex!)
+            self.navigationController?.popViewController(animated: true)
+        })
+        let cancel = UIAlertAction(title: "Cancel", style: .cancel, handler: {action in
+            
+        })
+        alert.addAction(cancel)
+        alert.addAction(delete)
+        self.present(alert, animated: true, completion: nil)
+    }
+    
+    
 
     /*
     // MARK: - Navigation

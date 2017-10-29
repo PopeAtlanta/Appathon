@@ -88,6 +88,11 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
         assignmentTable.reloadData()
     }
     
+    public func deleteAssignment(index: Int) {
+        assignments.remove(at: index)
+        assignmentTable.reloadData()
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "editSegue" {
             let destination = segue.destination as! EditAssignmentViewController

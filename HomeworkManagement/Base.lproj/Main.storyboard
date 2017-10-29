@@ -188,15 +188,24 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="ZCi-C0-MWw">
                                         <rect key="frame" x="0.0" y="569" width="375" height="34"/>
                                         <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wGa-Zl-9eT">
+                                                <rect key="frame" x="0.0" y="0.0" width="125" height="34"/>
+                                                <state key="normal" title="Delete">
+                                                    <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="deletePressed:" destination="wCa-I0-D7N" eventType="touchUpInside" id="Oe1-4I-3X2"/>
+                                                </connections>
+                                            </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VK8-vH-5fX">
-                                                <rect key="frame" x="0.0" y="0.0" width="187.5" height="34"/>
+                                                <rect key="frame" x="125" y="0.0" width="125" height="34"/>
                                                 <state key="normal" title="Discard Edits"/>
                                                 <connections>
                                                     <action selector="discardEditsPressed:" destination="wCa-I0-D7N" eventType="touchUpInside" id="FLW-Pd-h39"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NVa-H9-M6e">
-                                                <rect key="frame" x="187.5" y="0.0" width="187.5" height="34"/>
+                                                <rect key="frame" x="250" y="0.0" width="125" height="34"/>
                                                 <state key="normal" title="Save"/>
                                                 <connections>
                                                     <action selector="savePressed:" destination="wCa-I0-D7N" eventType="touchUpInside" id="Id9-Ja-c5q"/>
